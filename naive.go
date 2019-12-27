@@ -22,6 +22,8 @@ import (
 	"math"
 )
 
+// Transform the image with the given parameters.
+// rot(ation) must be specified in degrees.
 func Transform(img image.Image, scale float64, rot float64) image.Image {
 	rad := rot / 180 * math.Pi
 	img2 := image.NewRGBA64(calcBounds(img.Bounds(), scale, rad))
